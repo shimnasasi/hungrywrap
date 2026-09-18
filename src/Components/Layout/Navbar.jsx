@@ -1,16 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <header className="hw-navbar">
-
       <div className="hw-nav-container">
 
-        {/* Logo */}
-        <Link to="/" className="hw-logo">
-
+        {/* LOGO */}
+        <Link
+          to="/"
+          className="hw-logo"
+          onClick={closeMenu}
+        >
           <div className="hw-logo-icon">
             🌯
           </div>
@@ -23,50 +36,76 @@ const Navbar = () => {
               Wraps so good, you'll come back for more!
             </small>
           </div>
-
         </Link>
 
 
-        {/* Desktop Navigation */}
-        <nav className="hw-nav-links">
-
-          <Link to="/" className="hw-active">
+        {/* NAVIGATION */}
+        <nav
+          className={`hw-nav-links ${
+            menuOpen ? "hw-nav-open" : ""
+          }`}
+        >
+          <Link
+            to="/"
+            className={isActive("/") ? "hw-active" : ""}
+            onClick={closeMenu}
+          >
             Home
           </Link>
 
-          <Link to="/about">
+          <Link
+            to="/about"
+            className={isActive("/about") ? "hw-active" : ""}
+            onClick={closeMenu}
+          >
             About Us
           </Link>
 
-          <Link to="/specials">
+          <Link
+            to="/specials"
+            className={isActive("/specials") ? "hw-active" : ""}
+            onClick={closeMenu}
+          >
             Specials
           </Link>
 
-         
-
-          <Link to="/contact">
+          <Link
+            to="/contact"
+            className={isActive("/contact") ? "hw-active" : ""}
+            onClick={closeMenu}
+          >
             Contact Us
           </Link>
-
         </nav>
 
 
-        {/* Order Button */}
-        <Link to="/order" className="hw-order-btn">
+        {/* ORDER BUTTON */}
+        <Link
+          to="/order"
+          className="hw-order-btn"
+          onClick={closeMenu}
+        >
           Order Now
           <span>🛍</span>
         </Link>
 
 
-        {/* Mobile Menu */}
-        <button className="hw-menu-btn">
+        {/* MOBILE 3-LINE BUTTON */}
+        <button
+          type="button"
+          className={`hw-menu-btn ${
+            menuOpen ? "hw-menu-active" : ""
+          }`}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Open navigation menu"
+          aria-expanded={menuOpen}
+        >
           <span></span>
           <span></span>
           <span></span>
         </button>
 
       </div>
-
     </header>
   );
 };
