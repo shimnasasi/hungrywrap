@@ -1,0 +1,966 @@
+/* =========================================
+   THE HUNGRY WRAP BANNER
+========================================= */
+
+.hw-banner {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  overflow: hidden;
+  padding: 35px 0 25px;
+}
+
+
+/* =========================================
+   DECORATIVE DOTS
+========================================= */
+
+.hw-dots-left {
+  position: absolute;
+  left: 5px;
+  top: 75px;
+
+  width: 70px;
+  height: 120px;
+
+  background-image: radial-gradient(
+    #f47700 2px,
+    transparent 2px
+  );
+
+  background-size: 20px 20px;
+
+  opacity: 0.9;
+
+  animation: dotsFloat 5s ease-in-out infinite;
+}
+
+@keyframes dotsFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.hw-banner-container {
+  position: relative;
+
+  width: 90%;
+  max-width: 1150px;
+
+  min-height: 510px;
+
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 45% 55%;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.hw-banner-content {
+  padding-left: 20px;
+
+  position: relative;
+  z-index: 5;
+
+  opacity: 0;
+  transform: translateX(-40px);
+
+  animation: contentEntrance 0.8s ease forwards;
+}
+
+@keyframes contentEntrance {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================
+   WELCOME
+========================================= */
+
+.hw-welcome {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #f47700;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 15px;
+
+  opacity: 0;
+
+  animation: fadeUp 0.7s ease 0.15s forwards;
+}
+
+.hw-welcome span {
+  display: inline-block;
+
+  font-size: 18px;
+
+  animation: arrowMove 1.6s ease-in-out infinite;
+}
+
+@keyframes arrowMove {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-6px);
+  }
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.hw-banner-content h1 {
+  margin: 0;
+
+  color: #202020;
+
+  font-size: clamp(48px, 5vw, 70px);
+
+  line-height: 0.94;
+
+  font-weight: 900;
+
+  letter-spacing: -2px;
+
+  opacity: 0;
+  transform: translateY(25px);
+
+  animation: fadeUp 0.8s ease 0.25s forwards;
+}
+
+.hw-banner-content h1 span {
+  color: #f47700;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hw-banner-content h3 {
+  color: #252525;
+
+  font-size: 15px;
+
+  margin: 23px 0 10px;
+
+  font-weight: 700;
+
+  opacity: 0;
+  transform: translateY(15px);
+
+  animation: fadeUp 0.7s ease 0.4s forwards;
+}
+
+.hw-banner-content p {
+  max-width: 380px;
+
+  color: #666;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  margin: 0;
+
+  opacity: 0;
+  transform: translateY(15px);
+
+  animation: fadeUp 0.7s ease 0.5s forwards;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hw-banner-buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 25px;
+
+  opacity: 0;
+  transform: translateY(15px);
+
+  animation: fadeUp 0.7s ease 0.65s forwards;
+}
+
+
+.hw-primary-btn,
+.hw-secondary-btn {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 0 20px;
+
+  border-radius: 25px;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   PRIMARY BUTTON
+========================================= */
+
+.hw-primary-btn {
+  background: #f47700;
+
+  color: #ffffff;
+
+  border: 1px solid #f47700;
+
+  box-shadow:
+    0 7px 15px rgba(244, 119, 0, 0.2);
+}
+
+
+/* Shine animation */
+
+.hw-primary-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.6s ease;
+}
+
+.hw-primary-btn:hover::before {
+  left: 140%;
+}
+
+.hw-primary-btn:hover {
+  background: #df6500;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 11px 22px rgba(244, 119, 0, 0.28);
+}
+
+
+/* =========================================
+   SECONDARY BUTTON
+========================================= */
+
+.hw-secondary-btn {
+  background: #ffffff;
+
+  color: #f47700;
+
+  border: 1px solid #f47700;
+}
+
+.hw-secondary-btn:hover {
+  background: #fff3e6;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 18px rgba(244, 119, 0, 0.12);
+}
+
+
+/* =========================================
+   RIGHT IMAGE AREA
+========================================= */
+
+.hw-banner-image {
+  position: relative;
+
+  width: 100%;
+  height: 440px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transform: translateX(45px);
+
+  animation: imageEntrance 0.9s ease 0.25s forwards;
+}
+
+@keyframes imageEntrance {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================
+   ORANGE BACKGROUND
+========================================= */
+
+.hw-orange-shape {
+  position: absolute;
+
+  width: 430px;
+  height: 330px;
+
+  right: 25px;
+  top: 55px;
+
+  background: #ff7900;
+
+  border-radius:
+    52% 48% 55% 45% /
+    50% 55% 45% 50%;
+
+  z-index: 1;
+
+  box-shadow:
+    0 20px 45px rgba(255, 121, 0, 0.12);
+
+  animation: orangeShapeMove 6s ease-in-out infinite;
+}
+
+@keyframes orangeShapeMove {
+  0%,
+  100% {
+    transform: rotate(-3deg) scale(1);
+
+    border-radius:
+      52% 48% 55% 45% /
+      50% 55% 45% 50%;
+  }
+
+  50% {
+    transform: rotate(1deg) scale(1.03);
+
+    border-radius:
+      46% 54% 48% 52% /
+      55% 45% 55% 45%;
+  }
+}
+
+
+/* =========================================
+   WRAP IMAGE
+========================================= */
+
+.hw-banner-image img {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+  max-width: 530px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 18px 18px rgba(0, 0, 0, 0.15));
+
+  animation: wrapFloating 4s ease-in-out infinite;
+
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+@keyframes wrapFloating {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(0deg);
+  }
+}
+
+
+.hw-banner-image:hover img {
+  transform:
+    translateY(-7px)
+    rotate(0deg)
+    scale(1.025);
+
+  filter:
+    drop-shadow(0 25px 24px rgba(0, 0, 0, 0.18));
+}
+
+
+/* =========================================
+   YUMMY BUBBLE
+========================================= */
+
+.hw-yummy {
+  position: absolute;
+
+  right: 0;
+  top: 20px;
+
+  z-index: 6;
+
+  padding: 12px 20px;
+
+  background: #ffffff;
+
+  border: 2px solid #333;
+
+  border-radius: 50%;
+
+  color: #222;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 7px 18px rgba(0, 0, 0, 0.08);
+
+  animation: yummyFloat 3s ease-in-out infinite;
+}
+
+@keyframes yummyFloat {
+  0%,
+  100% {
+    transform:
+      rotate(8deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(5deg)
+      translateY(-8px);
+  }
+}
+
+
+.hw-yummy::after {
+  content: "";
+
+  position: absolute;
+
+  width: 20px;
+  height: 15px;
+
+  right: 12px;
+  bottom: -10px;
+
+  border-left: 2px solid #333;
+
+  transform: rotate(-20deg);
+}
+
+
+/* =========================================
+   HEART
+========================================= */
+
+.hw-banner-image::after {
+  content: "♡";
+
+  position: absolute;
+
+  left: 20px;
+  top: 100px;
+
+  color: #f47700;
+
+  font-size: 30px;
+
+  z-index: 6;
+
+  animation: heartFloating 2.8s ease-in-out infinite;
+}
+
+@keyframes heartFloating {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0);
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      rotate(8deg);
+  }
+}
+
+
+/* =========================================
+   CHARACTER BANNER
+========================================= */
+
+.hw-character-banner {
+  width: 90%;
+
+  max-width: 1060px;
+
+  min-height: 105px;
+
+  margin: 5px auto 0;
+
+  background: #fff2d8;
+
+  border-radius: 7px;
+
+  display: flex;
+
+  align-items: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid #ffe7c5;
+
+  box-shadow:
+    0 8px 25px rgba(244, 119, 0, 0.06);
+
+  opacity: 0;
+  transform: translateY(25px);
+
+  animation: characterEntrance 0.8s ease 0.8s forwards;
+}
+
+@keyframes characterEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* LEFT ORANGE CIRCLE */
+
+.hw-character-banner::before {
+  content: "";
+
+  position: absolute;
+
+  width: 95px;
+  height: 95px;
+
+  left: -35px;
+  top: 5px;
+
+  background: #ff7900;
+
+  border-radius: 50%;
+}
+
+
+/* RIGHT ORANGE DECORATION */
+
+.hw-character-banner::after {
+  content: "";
+
+  position: absolute;
+
+  width: 55px;
+  height: 90px;
+
+  right: -25px;
+  top: 8px;
+
+  background: #ff7900;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   CHARACTER
+========================================= */
+
+.hw-character {
+  width: 30%;
+
+  min-width: 180px;
+
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 75px;
+
+  animation: characterBounce 3s ease-in-out infinite;
+}
+
+@keyframes characterBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+
+/* =========================================
+   CHARACTER TEXT
+========================================= */
+
+.hw-character-content {
+  position: relative;
+
+  z-index: 3;
+
+  padding-left: 10px;
+}
+
+.hw-character-content h2 {
+  margin: 0;
+
+  color: #ed7100;
+
+  font-size: 25px;
+
+  line-height: 1.15;
+
+  font-weight: 900;
+}
+
+.hw-character-content p {
+  color: #333;
+
+  font-size: 12px;
+
+  margin: 7px 0 0;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .hw-banner-container {
+    grid-template-columns: 45% 55%;
+  }
+
+  .hw-banner-content h1 {
+    font-size: 52px;
+  }
+
+  .hw-banner-image {
+    height: 380px;
+  }
+
+  .hw-orange-shape {
+    width: 350px;
+    height: 270px;
+
+    right: 5px;
+  }
+
+  .hw-banner-image img {
+    max-width: 450px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .hw-banner {
+    padding: 35px 0 20px;
+  }
+
+  .hw-dots-left {
+    width: 50px;
+    height: 90px;
+
+    top: 40px;
+
+    background-size: 15px 15px;
+  }
+
+  .hw-banner-container {
+    width: 92%;
+
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+
+  /* CONTENT */
+
+  .hw-banner-content {
+    padding: 0;
+
+    text-align: center;
+  }
+
+  .hw-welcome {
+    justify-content: center;
+  }
+
+  .hw-banner-content h1 {
+    font-size: 50px;
+  }
+
+  .hw-banner-content h3 {
+    font-size: 14px;
+
+    margin-top: 18px;
+  }
+
+  .hw-banner-content p {
+    margin: auto;
+
+    max-width: 330px;
+  }
+
+
+  /* BUTTONS */
+
+  .hw-banner-buttons {
+    justify-content: center;
+
+    margin-top: 20px;
+  }
+
+
+  /* IMAGE */
+
+  .hw-banner-image {
+    height: 320px;
+
+    margin-top: 15px;
+  }
+
+  .hw-orange-shape {
+    width: 290px;
+    height: 220px;
+
+    right: 50%;
+    top: 50px;
+
+    margin-right: -145px;
+  }
+
+  .hw-banner-image img {
+    width: 100%;
+
+    max-width: 400px;
+  }
+
+  .hw-yummy {
+    right: 5%;
+    top: 15px;
+
+    padding: 9px 15px;
+
+    font-size: 11px;
+  }
+
+
+  /* CHARACTER */
+
+  .hw-character-banner {
+    width: 92%;
+
+    min-height: 100px;
+  }
+
+  .hw-character {
+    width: 28%;
+
+    min-width: 100px;
+
+    font-size: 55px;
+  }
+
+  .hw-character-content {
+    padding-left: 5px;
+  }
+
+  .hw-character-content h2 {
+    font-size: 16px;
+  }
+
+  .hw-character-content p {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+  .hw-banner-content h1 {
+    font-size: 43px;
+  }
+
+  .hw-banner-content h3 {
+    font-size: 13px;
+  }
+
+  .hw-banner-content p {
+    font-size: 11px;
+  }
+
+  .hw-primary-btn,
+  .hw-secondary-btn {
+    padding: 0 16px;
+
+    font-size: 10px;
+  }
+
+  .hw-banner-image {
+    height: 285px;
+  }
+
+  .hw-orange-shape {
+    width: 245px;
+    height: 190px;
+
+    margin-right: -122px;
+  }
+
+  .hw-banner-image img {
+    width: 350px;
+
+    max-width: 100%;
+  }
+
+  .hw-yummy {
+    right: 2%;
+
+    top: 5px;
+  }
+
+  .hw-character {
+    min-width: 85px;
+
+    font-size: 45px;
+  }
+
+  .hw-character-content h2 {
+    font-size: 14px;
+  }
+
+  .hw-character-content p {
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hw-dots-left,
+  .hw-banner-content,
+  .hw-welcome,
+  .hw-welcome span,
+  .hw-banner-content h1,
+  .hw-banner-content h3,
+  .hw-banner-content p,
+  .hw-banner-buttons,
+  .hw-banner-image,
+  .hw-orange-shape,
+  .hw-banner-image img,
+  .hw-yummy,
+  .hw-banner-image::after,
+  .hw-character-banner,
+  .hw-character {
+    animation: none;
+
+    opacity: 1;
+
+    transform: none;
+  }
+}

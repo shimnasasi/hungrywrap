@@ -1,0 +1,512 @@
+/* =========================================
+   WHY CHOOSE US
+========================================= */
+
+.hw-why {
+  position: relative;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  padding: 70px 20px 65px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.hw-why-heading {
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+
+  margin-bottom: 50px;
+
+  opacity: 0;
+
+  transform: translateY(20px);
+
+  animation: whyHeadingIn 0.8s ease forwards;
+}
+
+
+@keyframes whyHeadingIn {
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+.hw-why-heading span {
+  display: inline-block;
+
+  color: #ed7100;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.3px;
+
+  text-transform: uppercase;
+}
+
+
+.hw-why-heading h2 {
+  color: #292929;
+
+  font-size: 34px;
+
+  font-weight: 900;
+
+  margin: 8px 0 0;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* Orange underline */
+
+.hw-why-heading h2::after {
+  content: "";
+
+  display: block;
+
+  width: 45px;
+
+  height: 3px;
+
+  background: #f47700;
+
+  border-radius: 10px;
+
+  margin: 14px auto 0;
+
+  animation: underlineGrow 1s ease 0.4s both;
+}
+
+
+@keyframes underlineGrow {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 45px;
+  }
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.hw-why-grid {
+  position: relative;
+
+  z-index: 2;
+
+  width: 90%;
+
+  max-width: 1050px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 35px;
+}
+
+
+/* =========================================
+   REASON
+========================================= */
+
+.hw-reason {
+  position: relative;
+
+  text-align: center;
+
+  padding: 18px 12px;
+
+  border-radius: 15px;
+
+  opacity: 0;
+
+  transform: translateY(30px);
+
+  animation: reasonAppear 0.7s ease forwards;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* Cards enter one after another */
+
+.hw-reason:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.hw-reason:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.hw-reason:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+.hw-reason:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+
+@keyframes reasonAppear {
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   REASON HOVER
+========================================= */
+
+.hw-reason:hover {
+  transform: translateY(-8px);
+
+  background: #fffaf4;
+
+  box-shadow:
+    0 15px 30px rgba(165, 77, 0, 0.08);
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.hw-reason-icon {
+  width: 76px;
+  height: 76px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff7ea,
+      #ffedd1
+    );
+
+  color: #f47700;
+
+  font-size: 30px;
+
+  box-shadow:
+    0 7px 18px rgba(244, 119, 0, 0.08);
+
+  animation: iconFloat 3.5s ease-in-out infinite;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* Different timing for icons */
+
+.hw-reason:nth-child(2) .hw-reason-icon {
+  animation-delay: 0.4s;
+}
+
+.hw-reason:nth-child(3) .hw-reason-icon {
+  animation-delay: 0.8s;
+}
+
+.hw-reason:nth-child(4) .hw-reason-icon {
+  animation-delay: 1.2s;
+}
+
+
+@keyframes iconFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+
+/* Icon hover */
+
+.hw-reason:hover .hw-reason-icon {
+  background:
+    linear-gradient(
+      135deg,
+      #fff0da,
+      #ffe0b3
+    );
+
+  box-shadow:
+    0 10px 22px rgba(244, 119, 0, 0.15);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.hw-reason h3 {
+  color: #272727;
+
+  font-size: 15px;
+
+  font-weight: 900;
+
+  margin: 18px 0 9px;
+
+  transition: color 0.3s ease;
+}
+
+
+.hw-reason:hover h3 {
+  color: #f47700;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hw-reason p {
+  color: #777777;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+
+  max-width: 190px;
+
+  margin: auto;
+}
+
+
+/* =========================================
+   SMALL DECORATIVE CIRCLES
+========================================= */
+
+.hw-why::before {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  left: -100px;
+  top: 60px;
+
+  border-radius: 50%;
+
+  background: rgba(244, 119, 0, 0.035);
+}
+
+
+.hw-why::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  right: -130px;
+  bottom: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(244, 119, 0, 0.04);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .hw-why {
+    padding: 60px 20px;
+  }
+
+
+  .hw-why-heading h2 {
+    font-size: 30px;
+  }
+
+
+  .hw-why-grid {
+    width: 95%;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px 20px;
+  }
+
+
+  .hw-reason {
+    padding: 20px 15px;
+  }
+
+
+  .hw-reason p {
+    max-width: 230px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .hw-why {
+    padding: 50px 15px;
+  }
+
+
+  .hw-why-heading {
+    margin-bottom: 35px;
+  }
+
+
+  .hw-why-heading span {
+    font-size: 10px;
+  }
+
+
+  .hw-why-heading h2 {
+    font-size: 26px;
+  }
+
+
+  .hw-why-grid {
+    width: 100%;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px 8px;
+  }
+
+
+  .hw-reason {
+    padding: 15px 7px;
+  }
+
+
+  .hw-reason-icon {
+    width: 62px;
+    height: 62px;
+
+    font-size: 25px;
+  }
+
+
+  .hw-reason h3 {
+    font-size: 13px;
+
+    margin-top: 14px;
+  }
+
+
+  .hw-reason p {
+    max-width: 150px;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .hw-why-heading h2 {
+    font-size: 23px;
+  }
+
+
+  .hw-why-grid {
+    gap: 20px 5px;
+  }
+
+
+  .hw-reason-icon {
+    width: 58px;
+    height: 58px;
+
+    font-size: 23px;
+  }
+
+
+  .hw-reason h3 {
+    font-size: 12px;
+  }
+
+
+  .hw-reason p {
+    font-size: 8.5px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hw-why-heading,
+  .hw-why-heading h2::after,
+  .hw-reason,
+  .hw-reason-icon {
+    animation: none;
+
+    opacity: 1;
+
+    transform: none;
+  }
+}

@@ -1,0 +1,821 @@
+/* =========================================
+   SPECIALS BANNER
+========================================= */
+
+.specials-banner {
+  position: relative;
+
+  width: 100%;
+
+  padding: 55px 6% 25px;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #fffaf3 55%,
+    #fff1df 100%
+  );
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.specials-banner-container {
+  position: relative;
+  z-index: 2;
+
+  width: 90%;
+  max-width: 1150px;
+  min-height: 360px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 45px;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.specials-banner-content {
+  width: 44%;
+
+  position: relative;
+  z-index: 3;
+
+  opacity: 0;
+
+  animation:
+    specialsContentIn
+    0.8s ease forwards;
+}
+
+
+@keyframes specialsContentIn {
+
+  from {
+    opacity: 0;
+    translate: -25px 0;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+
+/* LABEL */
+
+.specials-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 14px;
+
+  color: #ef6c00;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+
+.specials-label span {
+  display: inline-block;
+
+  margin-left: 2px;
+
+  font-size: 16px;
+
+  animation:
+    specialsArrow
+    2s ease-in-out infinite;
+}
+
+
+@keyframes specialsArrow {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 4px -4px;
+  }
+}
+
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.specials-banner-content h1 {
+  margin: 0;
+
+  color: #202020;
+
+  font-size: 42px;
+
+  line-height: 1.08;
+
+  font-weight: 850;
+
+  letter-spacing: -0.8px;
+}
+
+
+.specials-banner-content h1 span {
+  color: #f47700;
+}
+
+
+/* DESCRIPTION */
+
+.specials-banner-content p {
+  max-width: 430px;
+
+  margin: 18px 0 0;
+
+  color: #5d5d5d;
+
+  font-size: 12px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   RIGHT IMAGE AREA
+========================================= */
+
+.specials-banner-image {
+  position: relative;
+
+  width: 56%;
+  height: 330px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+
+  animation:
+    specialsImageIn
+    0.9s ease 0.15s forwards;
+}
+
+
+@keyframes specialsImageIn {
+
+  from {
+    opacity: 0;
+    translate: 30px 0;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+
+/* =========================================
+   SOFT ORANGE SHAPE
+========================================= */
+
+.special-orange-shape {
+  position: absolute;
+
+  z-index: 0;
+
+  width: 390px;
+  height: 270px;
+
+  background: linear-gradient(
+    135deg,
+    #ffd394 0%,
+    #ffb45c 48%,
+    #f47700 100%
+  );
+
+  border-radius:
+    58% 42% 55% 45% /
+    45% 55% 45% 55%;
+
+  box-shadow:
+    0 20px 45px
+    rgba(244, 119, 0, 0.12);
+
+  animation:
+    specialsBlobMove
+    7s ease-in-out infinite;
+}
+
+
+@keyframes specialsBlobMove {
+
+  0%,
+  100% {
+    transform:
+      rotate(-5deg)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      rotate(-1deg)
+      scale(1.04);
+  }
+}
+
+
+/* =========================================
+   IMAGE CARD
+========================================= */
+
+.special-image-card {
+  position: relative;
+
+  z-index: 2;
+
+  width: 380px;
+  height: 245px;
+
+  padding: 6px;
+
+  background: #ffffff;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 18px 40px
+    rgba(70, 40, 10, 0.18);
+
+  transform: rotate(2deg);
+
+  overflow: hidden;
+
+  animation:
+    specialsPhotoFloat
+    4s ease-in-out infinite;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* IMAGE */
+
+.specials-banner-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 19px;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+
+/* IMAGE FLOAT */
+
+@keyframes specialsPhotoFloat {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -7px;
+  }
+}
+
+
+/* IMAGE HOVER */
+
+.special-image-card:hover {
+  transform:
+    rotate(0deg)
+    scale(1.025);
+
+  box-shadow:
+    0 23px 48px
+    rgba(70, 40, 10, 0.22);
+}
+
+
+.special-image-card:hover img {
+  transform: scale(1.045);
+
+  filter:
+    saturate(1.07)
+    contrast(1.02);
+}
+
+
+/* =========================================
+   YUMMY BUBBLE
+========================================= */
+
+.special-yummy {
+  position: absolute;
+
+  z-index: 6;
+
+  right: 2%;
+  top: 15px;
+
+  padding: 10px 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  background: #ffffff;
+
+  color: #252525;
+
+  border: 2px solid #252525;
+
+  border-radius:
+    50% 45% 55% 45%;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  transform: rotate(7deg);
+
+  box-shadow:
+    0 7px 18px
+    rgba(0, 0, 0, 0.08);
+
+  animation:
+    specialsYummyFloat
+    3s ease-in-out infinite;
+}
+
+
+.special-yummy span {
+  color: #f47700;
+
+  font-size: 16px;
+}
+
+
+@keyframes specialsYummyFloat {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -6px;
+  }
+}
+
+
+/* =========================================
+   HEARTS
+========================================= */
+
+.special-heart {
+  position: absolute;
+
+  z-index: 5;
+
+  color: #f47700;
+
+  font-size: 27px;
+
+  font-weight: 800;
+
+  animation:
+    specialsHeartFloat
+    3s ease-in-out infinite;
+}
+
+
+.special-heart-one {
+  left: 3%;
+  top: 30px;
+
+  transform: rotate(-15deg);
+}
+
+
+.special-heart-two {
+  right: 3%;
+  bottom: 30px;
+
+  transform: rotate(12deg);
+
+  animation-delay: 0.7s;
+}
+
+
+@keyframes specialsHeartFloat {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -7px;
+  }
+}
+
+
+/* =========================================
+   DOTS
+========================================= */
+
+.special-dots {
+  position: absolute;
+
+  width: 65px;
+  height: 100px;
+
+  background-image: radial-gradient(
+    rgba(239, 108, 0, 0.65) 2px,
+    transparent 2px
+  );
+
+  background-size: 16px 16px;
+
+  opacity: 0.65;
+}
+
+
+.special-dots-left {
+  left: -5px;
+  top: 80px;
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.special-title {
+  position: relative;
+  z-index: 4;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  max-width: 1100px;
+
+  margin: 15px auto 0;
+
+  text-align: center;
+}
+
+
+.special-title h2 {
+  margin: 0;
+
+  color: #252525;
+
+  font-size: 18px;
+
+  font-weight: 850;
+
+  letter-spacing: 0.2px;
+}
+
+
+.special-title span {
+  display: inline-block;
+
+  color: #f47700;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  animation:
+    specialsTitleArrow
+    2s ease-in-out infinite;
+}
+
+
+.special-title span:last-child {
+  animation-delay: 0.4s;
+}
+
+
+@keyframes specialsTitleArrow {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 4px;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .specials-banner {
+    padding:
+      45px 4% 20px;
+  }
+
+
+  .specials-banner-container {
+    width: 94%;
+
+    min-height: 330px;
+
+    gap: 25px;
+  }
+
+
+  .specials-banner-content {
+    width: 45%;
+  }
+
+
+  .specials-banner-image {
+    width: 55%;
+
+    height: 300px;
+  }
+
+
+  .specials-banner-content h1 {
+    font-size: 35px;
+  }
+
+
+  .specials-banner-content p {
+    font-size: 11px;
+  }
+
+
+  .special-orange-shape {
+    width: 320px;
+    height: 230px;
+  }
+
+
+  .special-image-card {
+    width: 310px;
+    height: 205px;
+  }
+
+
+  .special-title h2 {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .specials-banner {
+    padding:
+      35px 18px 20px;
+  }
+
+
+  .specials-banner-container {
+    width: 100%;
+
+    min-height: auto;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    text-align: center;
+  }
+
+
+  /* CONTENT */
+
+  .specials-banner-content {
+    width: 100%;
+  }
+
+
+  .specials-label {
+    justify-content: center;
+
+    margin-bottom: 11px;
+
+    font-size: 10px;
+  }
+
+
+  .specials-banner-content h1 {
+    font-size: 32px;
+
+    line-height: 1.1;
+  }
+
+
+  .specials-banner-content p {
+    max-width: 360px;
+
+    margin:
+      14px auto 0;
+
+    font-size: 10.5px;
+  }
+
+
+  .specials-banner-content p br {
+    display: none;
+  }
+
+
+  /* IMAGE */
+
+  .specials-banner-image {
+    width: 100%;
+
+    height: 270px;
+  }
+
+
+  .special-orange-shape {
+    width: 280px;
+    height: 205px;
+  }
+
+
+  .special-image-card {
+    width: 270px;
+    height: 185px;
+
+    border-radius: 20px;
+  }
+
+
+  .special-image-card img {
+    border-radius: 15px;
+  }
+
+
+  .special-yummy {
+    right: 5%;
+
+    top: 10px;
+
+    padding:
+      8px 13px;
+
+    font-size: 10px;
+  }
+
+
+  .special-heart-one {
+    left: 4%;
+  }
+
+
+  .special-heart-two {
+    right: 4%;
+  }
+
+
+  .special-dots {
+    display: none;
+  }
+
+
+  /* BOTTOM TITLE */
+
+  .special-title {
+    gap: 7px;
+
+    margin-top: 5px;
+  }
+
+
+  .special-title h2 {
+    font-size: 15px;
+  }
+
+
+  .special-title span {
+    font-size: 18px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .specials-banner {
+    padding:
+      30px 14px 18px;
+  }
+
+
+  .specials-banner-content h1 {
+    font-size: 28px;
+  }
+
+
+  .specials-banner-image {
+    height: 240px;
+  }
+
+
+  .special-orange-shape {
+    width: 245px;
+    height: 180px;
+  }
+
+
+  .special-image-card {
+    width: 235px;
+    height: 165px;
+  }
+
+
+  .special-title h2 {
+    font-size: 13px;
+  }
+
+
+  .special-title span {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .specials-banner-content,
+  .specials-banner-image,
+  .specials-label span,
+  .special-orange-shape,
+  .special-image-card,
+  .special-yummy,
+  .special-heart,
+  .special-title span {
+
+    animation: none;
+
+    opacity: 1;
+
+    translate: 0 0;
+  }
+}

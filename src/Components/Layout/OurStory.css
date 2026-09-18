@@ -1,0 +1,840 @@
+/* =========================================
+   OUR STORY
+========================================= */
+
+.our-story {
+  width: 100%;
+  position: relative;
+
+  background: linear-gradient(
+    135deg,
+    #fff5e7 0%,
+    #fff9f2 50%,
+    #ffe9cb 100%
+  );
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.story-container {
+  width: 90%;
+  max-width: 1100px;
+
+  min-height: 350px;
+
+  margin: 0 auto;
+
+  padding: 45px 30px;
+
+  display: grid;
+
+  grid-template-columns: 43% 57%;
+
+  align-items: center;
+
+  gap: 45px;
+}
+
+
+/* =========================================
+   IMAGE AREA
+========================================= */
+
+.story-image {
+  position: relative;
+
+  width: 100%;
+  height: 290px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+
+  animation:
+    storyImageEntrance 0.8s ease forwards;
+}
+
+
+@keyframes storyImageEntrance {
+
+  from {
+    opacity: 0;
+    translate: -25px 0;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+
+/* =========================================
+   BACKGROUND SHAPE
+========================================= */
+
+.story-image-bg {
+  position: absolute;
+
+  width: 310px;
+  height: 225px;
+
+  background: linear-gradient(
+    135deg,
+    #ffd293,
+    #fff0d8
+  );
+
+  border-radius:
+    35% 65% 45% 55% /
+    55% 40% 60% 45%;
+
+  transform: rotate(-5deg);
+
+  box-shadow:
+    0 15px 35px
+    rgba(244, 119, 0, 0.08);
+
+  animation:
+    storyBgMove 6s ease-in-out infinite;
+}
+
+
+@keyframes storyBgMove {
+
+  0%,
+  100% {
+    transform:
+      rotate(-5deg)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      rotate(-2deg)
+      scale(1.04);
+  }
+}
+
+
+/* =========================================
+   IMAGE COLLAGE
+========================================= */
+
+.story-collage {
+  position: relative;
+
+  z-index: 3;
+
+  width: 330px;
+  height: 250px;
+}
+
+
+/* =========================================
+   COMMON IMAGE WRAPPER
+========================================= */
+
+.story-photo-wrap {
+  position: absolute;
+
+  padding: 5px;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 14px 30px
+    rgba(65, 38, 12, 0.18);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* ACTUAL IMAGE */
+
+.story-photo {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 13px;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+
+/* =========================================
+   MAIN ROLLS IMAGE
+========================================= */
+
+.story-roll-wrap {
+  width: 225px;
+  height: 155px;
+
+  left: 45px;
+  top: 48px;
+
+  z-index: 3;
+
+  transform: rotate(-3deg);
+
+  animation:
+    storyRollFloat 4s ease-in-out infinite;
+}
+
+
+@keyframes storyRollFloat {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -6px;
+  }
+}
+
+
+/* =========================================
+   MOMOS IMAGE
+========================================= */
+
+.story-momos-wrap {
+  width: 115px;
+  height: 100px;
+
+  right: 0;
+  top: 5px;
+
+  z-index: 5;
+
+  transform: rotate(7deg);
+
+  animation:
+    storyMomosFloat 4.5s ease-in-out infinite;
+}
+
+
+@keyframes storyMomosFloat {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+
+/* =========================================
+   CHAYA IMAGE
+========================================= */
+
+.story-chaya-wrap {
+  width: 110px;
+  height: 95px;
+
+  left: 0;
+  bottom: 5px;
+
+  z-index: 5;
+
+  transform: rotate(-7deg);
+
+  animation:
+    storyChayaFloat 4.2s ease-in-out infinite;
+}
+
+
+@keyframes storyChayaFloat {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -7px;
+  }
+}
+
+
+/* =========================================
+   IMAGE HOVER
+========================================= */
+
+.story-photo-wrap:hover {
+  z-index: 20;
+
+  box-shadow:
+    0 20px 40px
+    rgba(65, 38, 12, 0.24);
+}
+
+
+.story-roll-wrap:hover {
+  transform:
+    rotate(0deg)
+    scale(1.05);
+}
+
+
+.story-momos-wrap:hover {
+  transform:
+    rotate(2deg)
+    scale(1.08);
+}
+
+
+.story-chaya-wrap:hover {
+  transform:
+    rotate(-2deg)
+    scale(1.08);
+}
+
+
+.story-photo-wrap:hover .story-photo {
+  transform: scale(1.05);
+
+  filter:
+    saturate(1.08)
+    contrast(1.03);
+}
+
+
+/* =========================================
+   HEARTS
+========================================= */
+
+.story-heart {
+  position: absolute;
+
+  z-index: 10;
+
+  color: #f47700;
+
+  font-size: 28px;
+
+  font-weight: 800;
+
+  animation:
+    storyHeartFloat 3s ease-in-out infinite;
+}
+
+
+.story-heart-one {
+  left: 15px;
+  top: 25px;
+
+  transform: rotate(-15deg);
+}
+
+
+.story-heart-two {
+  right: 15px;
+  bottom: 20px;
+
+  transform: rotate(12deg);
+
+  animation-delay: 0.7s;
+}
+
+
+@keyframes storyHeartFloat {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -7px;
+  }
+}
+
+
+/* =========================================
+   SPARKS
+========================================= */
+
+.story-spark {
+  position: absolute;
+
+  z-index: 9;
+
+  color: #f47700;
+
+  font-size: 14px;
+
+  animation:
+    storySparkAnimation
+    2.5s ease-in-out infinite;
+}
+
+
+.story-spark-one {
+  left: 55px;
+  top: 5px;
+}
+
+
+.story-spark-two {
+  right: 40px;
+  bottom: 8px;
+
+  animation-delay: 0.8s;
+}
+
+
+@keyframes storySparkAnimation {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.story-content {
+  position: relative;
+
+  padding: 10px 0;
+
+  opacity: 0;
+
+  animation:
+    storyContentEntrance
+    0.8s ease 0.15s forwards;
+}
+
+
+@keyframes storyContentEntrance {
+
+  from {
+    opacity: 0;
+    translate: 25px 0;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.story-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #f47700;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+}
+
+
+.story-label span {
+  display: inline-block;
+
+  font-size: 15px;
+
+  animation:
+    storyArrowMove
+    2s ease-in-out infinite;
+}
+
+
+@keyframes storyArrowMove {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 5px 0;
+  }
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.story-content h2 {
+  margin: 12px 0 17px;
+
+  color: #202020;
+
+  font-size: 31px;
+
+  line-height: 1.2;
+
+  font-weight: 850;
+
+  letter-spacing: -0.4px;
+}
+
+
+.story-content h2 span {
+  color: #f47700;
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.story-content p {
+  max-width: 570px;
+
+  margin: 0 0 12px;
+
+  color: #555555;
+
+  font-size: 12px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   ORANGE LINE
+========================================= */
+
+.story-line {
+  width: 42px;
+  height: 3px;
+
+  margin-top: 18px;
+
+  background: linear-gradient(
+    90deg,
+    #ffae55,
+    #f47700
+  );
+
+  border-radius: 20px;
+
+  animation:
+    storyLineGrow
+    0.9s ease forwards;
+}
+
+
+@keyframes storyLineGrow {
+
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 42px;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .story-container {
+    width: 94%;
+
+    grid-template-columns:
+      43% 57%;
+
+    gap: 25px;
+
+    padding: 40px 20px;
+  }
+
+
+  .story-image {
+    height: 260px;
+  }
+
+
+  .story-collage {
+    width: 285px;
+    height: 220px;
+  }
+
+
+  .story-image-bg {
+    width: 260px;
+    height: 195px;
+  }
+
+
+  .story-roll-wrap {
+    width: 190px;
+    height: 135px;
+
+    left: 40px;
+    top: 45px;
+  }
+
+
+  .story-momos-wrap {
+    width: 100px;
+    height: 88px;
+  }
+
+
+  .story-chaya-wrap {
+    width: 95px;
+    height: 82px;
+  }
+
+
+  .story-content h2 {
+    font-size: 27px;
+  }
+
+
+  .story-content p {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .story-container {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    padding: 40px 20px;
+
+    gap: 15px;
+
+    text-align: center;
+  }
+
+
+  .story-image {
+    width: 100%;
+
+    height: 265px;
+
+    margin: 0 auto;
+  }
+
+
+  .story-collage {
+    width: 290px;
+    height: 225px;
+
+    margin: auto;
+  }
+
+
+  .story-image-bg {
+    width: 265px;
+    height: 200px;
+  }
+
+
+  .story-roll-wrap {
+    width: 195px;
+    height: 140px;
+
+    left: 42px;
+  }
+
+
+  .story-momos-wrap {
+    width: 100px;
+    height: 88px;
+  }
+
+
+  .story-chaya-wrap {
+    width: 95px;
+    height: 82px;
+  }
+
+
+  .story-content {
+    width: 100%;
+
+    padding: 0;
+  }
+
+
+  .story-label {
+    justify-content: center;
+  }
+
+
+  .story-content h2 {
+    font-size: 25px;
+  }
+
+
+  .story-content p {
+    max-width: 450px;
+
+    margin:
+      0 auto 12px;
+
+    font-size: 11px;
+  }
+
+
+  .story-line {
+    margin:
+      18px auto 0;
+  }
+
+
+  .story-heart-one {
+    left: 8%;
+  }
+
+
+  .story-heart-two {
+    right: 8%;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .story-container {
+    padding: 35px 15px;
+  }
+
+
+  .story-image {
+    height: 230px;
+  }
+
+
+  .story-collage {
+    width: 250px;
+    height: 195px;
+  }
+
+
+  .story-image-bg {
+    width: 225px;
+    height: 170px;
+  }
+
+
+  .story-roll-wrap {
+    width: 165px;
+    height: 120px;
+
+    left: 38px;
+    top: 40px;
+  }
+
+
+  .story-momos-wrap {
+    width: 82px;
+    height: 72px;
+  }
+
+
+  .story-chaya-wrap {
+    width: 80px;
+    height: 70px;
+  }
+
+
+  .story-content h2 {
+    font-size: 22px;
+  }
+
+
+  .story-content p {
+    font-size: 10px;
+  }
+
+
+  .story-heart {
+    font-size: 23px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .story-image,
+  .story-image-bg,
+  .story-roll-wrap,
+  .story-momos-wrap,
+  .story-chaya-wrap,
+  .story-heart,
+  .story-spark,
+  .story-content,
+  .story-label span,
+  .story-line {
+
+    animation: none;
+
+    opacity: 1;
+
+    translate: 0 0;
+  }
+}

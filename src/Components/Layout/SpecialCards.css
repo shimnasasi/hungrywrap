@@ -1,0 +1,567 @@
+/* =========================================
+   SPECIAL CARDS SECTION
+========================================= */
+
+.special-cards-section {
+  position: relative;
+  width: 100%;
+
+  padding: 40px 20px 60px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* SOFT BACKGROUND DECORATION */
+
+.special-cards-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  left: -130px;
+  top: 70px;
+
+  background: #fff5e8;
+
+  border-radius: 50%;
+}
+
+.special-cards-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  right: -90px;
+  bottom: 20px;
+
+  background: #fff7ec;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.special-cards-container {
+  position: relative;
+  z-index: 2;
+
+  width: 90%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.special-card {
+  position: relative;
+
+  padding: 15px 15px 22px;
+
+  text-align: center;
+
+  /* SIMPLE SOFT SHADE */
+  background: linear-gradient(
+    145deg,
+    #ffffff 0%,
+    #fffaf3 55%,
+    #fff1df 100%
+  );
+
+  border: 1px solid #f4dfc7;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 24px rgba(123, 72, 20, 0.08);
+
+  opacity: 0;
+  translate: 0 25px;
+
+  animation: specialCardShow 0.7s ease forwards;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+/* CARD ANIMATION DELAY */
+
+.special-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.special-card:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.special-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+
+@keyframes specialCardShow {
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+
+/* SMALL DECORATIVE CIRCLE */
+
+.special-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 110px;
+  height: 110px;
+
+  right: -60px;
+  top: -60px;
+
+  background: rgba(244, 119, 0, 0.06);
+
+  border-radius: 50%;
+
+  transition: transform 0.4s ease;
+}
+
+
+/* CARD HOVER */
+
+.special-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #f2c99d;
+
+  box-shadow:
+    0 15px 32px rgba(123, 72, 20, 0.12);
+}
+
+.special-card:hover::before {
+  transform: scale(1.25);
+}
+
+
+/* =========================================
+   IMAGE AREA
+========================================= */
+
+.special-card-image {
+  position: relative;
+
+  width: 100%;
+  height: 215px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #fff2df;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+}
+
+
+/* IMAGE */
+
+.special-card-image img {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 16px;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+
+/* SOFT IMAGE SHADE */
+
+.special-image-overlay {
+  position: absolute;
+
+  z-index: 2;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    to top,
+    rgba(50, 25, 5, 0.14),
+    transparent 45%
+  );
+}
+
+
+/* IMAGE HOVER */
+
+.special-card:hover .special-card-image img {
+  transform: scale(1.06);
+
+  filter: saturate(1.06);
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.special-card-icon {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 50%;
+  bottom: 10px;
+
+  translate: -50% 0;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #f47700;
+
+  border: 4px solid #ffffff;
+
+  border-radius: 50%;
+
+  font-size: 21px;
+
+  box-shadow:
+    0 6px 16px rgba(244, 119, 0, 0.22);
+
+  animation: specialIconFloat 3s ease-in-out infinite;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.special-card:nth-child(2) .special-card-icon {
+  animation-delay: 0.4s;
+}
+
+.special-card:nth-child(3) .special-card-icon {
+  animation-delay: 0.8s;
+}
+
+
+@keyframes specialIconFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+
+.special-card:hover .special-card-icon {
+  transform: scale(1.07);
+
+  background: #e96f00;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.special-card-content {
+  position: relative;
+  z-index: 3;
+
+  padding: 0 8px;
+}
+
+
+/* TITLE */
+
+.special-card-content h3 {
+  margin: 18px 0 7px;
+
+  color: #222222;
+
+  font-size: 18px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+
+  transition: color 0.3s ease;
+}
+
+
+.special-card:hover .special-card-content h3 {
+  color: #f47700;
+}
+
+
+/* DESCRIPTION */
+
+.special-card-content p {
+  max-width: 260px;
+  min-height: 52px;
+
+  margin: 0 auto;
+
+  color: #666666;
+
+  font-size: 11px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.special-price {
+  margin: 10px 0 13px;
+
+  color: #ef6c00;
+
+  font-size: 19px;
+
+  font-weight: 900;
+}
+
+
+/* =========================================
+   ORDER BUTTON
+========================================= */
+
+.special-order-btn {
+  min-width: 125px;
+
+  padding: 9px 21px;
+
+  background: #ffffff;
+
+  color: #f47700;
+
+  border: 1.5px solid #f47700;
+
+  border-radius: 30px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.special-order-btn span {
+  margin-left: 6px;
+}
+
+
+.special-order-btn:hover {
+  color: #ffffff;
+
+  background: #f47700;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 17px rgba(244, 119, 0, 0.22);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+  .special-cards-section {
+    padding: 35px 20px 50px;
+  }
+
+  .special-cards-container {
+    width: 94%;
+
+    max-width: 760px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+  }
+
+  .special-card-image {
+    height: 220px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .special-cards-section {
+    padding: 25px 16px 40px;
+  }
+
+  .special-cards-container {
+    width: 100%;
+
+    max-width: 380px;
+
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .special-card {
+    padding: 14px 14px 20px;
+
+    border-radius: 18px;
+  }
+
+  .special-card-image {
+    height: 215px;
+
+    border-radius: 15px;
+  }
+
+  .special-card-image img {
+    border-radius: 15px;
+  }
+
+  .special-card-content h3 {
+    font-size: 17px;
+  }
+
+  .special-card-content p {
+    min-height: auto;
+
+    max-width: 290px;
+
+    font-size: 10.5px;
+  }
+
+  .special-price {
+    font-size: 18px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .special-cards-section {
+    padding: 20px 12px 35px;
+  }
+
+  .special-card-image {
+    height: 195px;
+  }
+
+  .special-card-icon {
+    width: 47px;
+    height: 47px;
+
+    font-size: 19px;
+  }
+
+  .special-card-content h3 {
+    font-size: 16px;
+  }
+
+  .special-card-content p {
+    font-size: 10px;
+  }
+
+  .special-order-btn {
+    min-width: 115px;
+
+    padding: 8px 18px;
+
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .special-card,
+  .special-card-icon {
+    animation: none;
+
+    opacity: 1;
+
+    translate: 0 0;
+  }
+
+  .special-card:hover,
+  .special-card:hover .special-card-image img,
+  .special-card:hover .special-card-icon {
+    transform: none;
+  }
+}

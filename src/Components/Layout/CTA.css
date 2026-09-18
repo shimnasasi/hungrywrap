@@ -1,0 +1,479 @@
+/* =========================================
+   THE HUNGRY WRAP - CTA
+========================================= */
+
+.hw-cta {
+  width: 90%;
+  max-width: 1080px;
+
+  min-height: 125px;
+
+  margin: 0 auto 60px;
+
+  padding: 22px 38px;
+
+  background: linear-gradient(
+    135deg,
+    #ff8500 0%,
+    #f47700 55%,
+    #ee6800 100%
+  );
+
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 14px 30px rgba(180, 75, 0, 0.15);
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  animation: ctaEntrance 0.8s ease forwards;
+}
+
+
+/* =========================================
+   CTA ENTRANCE
+========================================= */
+
+@keyframes ctaEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   BACKGROUND DECORATION
+========================================= */
+
+.hw-cta::before {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  left: -90px;
+  bottom: -110px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  animation: ctaCircle 5s ease-in-out infinite;
+}
+
+
+.hw-cta::after {
+  content: "";
+
+  position: absolute;
+
+  width: 110px;
+  height: 110px;
+
+  right: 55px;
+  top: -75px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.09);
+}
+
+
+@keyframes ctaCircle {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.hw-cta-content {
+  color: #ffffff;
+
+  position: relative;
+
+  z-index: 3;
+
+  opacity: 0;
+
+  transform: translateX(-25px);
+
+  animation:
+    ctaContentIn 0.7s ease 0.2s forwards;
+}
+
+
+@keyframes ctaContentIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.hw-cta-content h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 26px;
+
+  line-height: 1.2;
+
+  font-weight: 900;
+
+  letter-spacing: -0.3px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hw-cta-content p {
+  margin: 8px 0 0;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   ORDER BUTTON
+========================================= */
+
+.hw-cta-button {
+  margin-left: auto;
+
+  margin-right: 105px;
+
+  min-height: 44px;
+
+  padding: 0 22px;
+
+  background: #ffffff;
+
+  color: #f47700;
+
+  border-radius: 25px;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  position: relative;
+
+  z-index: 5;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 18px rgba(115, 45, 0, 0.15);
+
+  opacity: 0;
+
+  transform: translateY(12px);
+
+  animation:
+    ctaButtonIn 0.7s ease 0.45s forwards;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+@keyframes ctaButtonIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   BUTTON SHINE
+========================================= */
+
+.hw-cta-button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 145, 25, 0.2),
+    transparent
+  );
+
+  transform: skewX(-25deg);
+
+  transition: left 0.6s ease;
+}
+
+
+.hw-cta-button:hover::before {
+  left: 140%;
+}
+
+
+.hw-cta-button:hover {
+  background: #fff7ed;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 24px rgba(105, 40, 0, 0.2);
+}
+
+
+/* =========================================
+   CHICK CHARACTER
+========================================= */
+
+.hw-cta-character {
+  position: absolute;
+
+  z-index: 4;
+
+  right: -2px;
+  bottom: -28px;
+
+  font-size: 105px;
+
+  line-height: 1;
+
+  filter:
+    drop-shadow(
+      0 8px 8px rgba(110, 40, 0, 0.15)
+    );
+
+  animation:
+    chickFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes chickFloat {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(-3deg);
+  }
+
+  50% {
+    transform:
+      translateY(-8px)
+      rotate(4deg);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .hw-cta {
+    width: 92%;
+
+    padding: 22px 30px;
+  }
+
+
+  .hw-cta-content h2 {
+    font-size: 23px;
+  }
+
+
+  .hw-cta-button {
+    margin-right: 85px;
+
+    padding: 0 18px;
+  }
+
+
+  .hw-cta-character {
+    font-size: 90px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .hw-cta {
+    width: 90%;
+
+    min-height: 185px;
+
+    margin: 0 auto 45px;
+
+    padding: 28px 25px;
+
+    display: block;
+
+    border-radius: 17px;
+  }
+
+
+  .hw-cta-content {
+    max-width: 70%;
+  }
+
+
+  .hw-cta-content h2 {
+    max-width: 230px;
+
+    font-size: 21px;
+
+    line-height: 1.25;
+  }
+
+
+  .hw-cta-content p {
+    max-width: 210px;
+
+    font-size: 10px;
+  }
+
+
+  .hw-cta-button {
+    min-height: 42px;
+
+    margin: 20px 0 0;
+
+    padding: 0 19px;
+
+    font-size: 10px;
+  }
+
+
+  .hw-cta-character {
+    right: -5px;
+    bottom: -17px;
+
+    font-size: 82px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+  .hw-cta {
+    width: 92%;
+
+    min-height: 180px;
+
+    padding: 25px 20px;
+  }
+
+
+  .hw-cta-content {
+    max-width: 72%;
+  }
+
+
+  .hw-cta-content h2 {
+    font-size: 19px;
+  }
+
+
+  .hw-cta-content p {
+    font-size: 9px;
+
+    line-height: 1.5;
+  }
+
+
+  .hw-cta-button {
+    min-height: 39px;
+
+    margin-top: 17px;
+
+    padding: 0 17px;
+  }
+
+
+  .hw-cta-character {
+    font-size: 72px;
+
+    right: -3px;
+    bottom: -13px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hw-cta,
+  .hw-cta-content,
+  .hw-cta-button,
+  .hw-cta-character,
+  .hw-cta::before {
+    animation: none;
+
+    opacity: 1;
+
+    transform: none;
+  }
+}

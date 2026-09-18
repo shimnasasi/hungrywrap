@@ -1,0 +1,687 @@
+/* =========================================
+   ABOUT VALUES
+   SAME THEME AS OUR STORY
+========================================= */
+
+.about-values {
+  width: 100%;
+  position: relative;
+  background: #fff5e7;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND DECORATIONS
+========================================= */
+
+.about-values::before {
+  content: "";
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  left: -100px;
+  bottom: -100px;
+
+  background: rgba(244, 119, 0, 0.07);
+
+  border-radius: 50%;
+}
+
+
+.about-values::after {
+  content: "";
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  right: -80px;
+  top: -80px;
+
+  background: rgba(244, 119, 0, 0.06);
+
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.about-values-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 55px 30px 65px;
+}
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.about-values-header {
+  text-align: center;
+
+  margin-bottom: 42px;
+}
+
+
+.values-heading {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.values-heading h2 {
+  margin: 0;
+
+  color: #f47700;
+
+  font-size: 25px;
+
+  font-weight: 900;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.3px;
+
+  opacity: 0;
+
+  animation: valuesHeadingIn 0.8s ease forwards;
+}
+
+
+@keyframes valuesHeadingIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   HEADING ARROWS
+========================================= */
+
+.heading-arrow {
+  display: inline-block;
+
+  color: #f47700;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  animation: valuesArrowMove 2s ease-in-out infinite;
+}
+
+
+.heading-arrow:last-child {
+  animation-delay: 0.4s;
+}
+
+
+@keyframes valuesArrowMove {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+
+/* =========================================
+   ORANGE LINE
+========================================= */
+
+.about-values-line {
+  width: 48px;
+  height: 3px;
+
+  margin: 14px auto 0;
+
+  background: linear-gradient(
+    90deg,
+    #ffad55,
+    #f47700
+  );
+
+  border-radius: 20px;
+
+  animation: valuesLineGrow 0.8s ease forwards;
+}
+
+
+@keyframes valuesLineGrow {
+
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 48px;
+  }
+}
+
+
+/* =========================================
+   VALUES GRID
+========================================= */
+
+.about-values-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 0;
+}
+
+
+/* =========================================
+   VALUE CARD
+========================================= */
+
+.about-value-card {
+  position: relative;
+
+  min-height: 205px;
+
+  padding: 10px 30px 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  text-align: center;
+
+  opacity: 0;
+
+  animation: valueFadeUp 0.7s ease forwards;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* ANIMATION DELAYS */
+
+.about-value-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.about-value-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.about-value-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.about-value-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+
+@keyframes valueFadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* SIMPLE CARD HOVER */
+
+.about-value-card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* =========================================
+   VERTICAL SEPARATOR
+========================================= */
+
+.about-value-card:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  top: 8px;
+
+  width: 1px;
+  height: 170px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #e8cfad 20%,
+    #e8cfad 80%,
+    transparent
+  );
+}
+
+
+/* =========================================
+   ICON CIRCLE
+========================================= */
+
+.about-value-icon {
+  position: relative;
+
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  color: #f47700;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #ffe5bd
+  );
+
+  border: 1px solid rgba(244, 119, 0, 0.12);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 7px 18px rgba(244, 119, 0, 0.08);
+
+  animation: valueIconFloat 3s ease-in-out infinite;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* DIFFERENT FLOAT TIMING */
+
+.about-value-card:nth-child(2) .about-value-icon {
+  animation-delay: 0.3s;
+}
+
+.about-value-card:nth-child(3) .about-value-icon {
+  animation-delay: 0.6s;
+}
+
+.about-value-card:nth-child(4) .about-value-icon {
+  animation-delay: 0.9s;
+}
+
+
+@keyframes valueIconFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+
+/* =========================================
+   ICON HOVER
+========================================= */
+
+.about-value-card:hover .about-value-icon {
+
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #ff9225,
+    #f47700
+  );
+
+  box-shadow:
+    0 10px 25px rgba(244, 119, 0, 0.20);
+}
+
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.about-value-card h3 {
+  margin: 0 0 8px;
+
+  color: #202020;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+
+  transition: color 0.3s ease;
+}
+
+
+.about-value-card:hover h3 {
+  color: #f47700;
+}
+
+
+/* =========================================
+   CARD DESCRIPTION
+========================================= */
+
+.about-value-card p {
+  max-width: 210px;
+
+  margin: 0 auto;
+
+  color: #555555;
+
+  font-size: 10.5px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   BOTTOM HOVER LINE
+========================================= */
+
+.about-value-card::before {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+  left: 50%;
+
+  width: 0;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #ffad55,
+    #f47700
+  );
+
+  border-radius: 20px;
+
+  transform: translateX(-50%);
+
+  transition: width 0.3s ease;
+}
+
+
+.about-value-card:hover::before {
+  width: 42px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .about-values-container {
+    padding: 50px 20px 55px;
+  }
+
+
+  .about-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 35px;
+  }
+
+
+  .about-value-card {
+    padding: 10px 25px 20px;
+  }
+
+
+  /* REMOVE SEPARATOR FROM RIGHT SIDE */
+
+  .about-value-card:nth-child(2)::after,
+  .about-value-card:nth-child(4)::after {
+    display: none;
+  }
+
+
+  /* KEEP SEPARATOR ON LEFT */
+
+  .about-value-card:nth-child(1)::after,
+  .about-value-card:nth-child(3)::after {
+    display: block;
+  }
+
+
+  .about-values-header {
+    margin-bottom: 35px;
+  }
+
+
+  .values-heading h2 {
+    font-size: 22px;
+  }
+
+
+  .heading-arrow {
+    font-size: 22px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .about-values-container {
+    padding: 45px 18px 50px;
+  }
+
+
+  .about-values-header {
+    margin-bottom: 27px;
+  }
+
+
+  .values-heading {
+    gap: 7px;
+  }
+
+
+  .values-heading h2 {
+    font-size: 19px;
+
+    line-height: 1.3;
+  }
+
+
+  .heading-arrow {
+    font-size: 20px;
+  }
+
+
+  .about-values-line {
+    width: 42px;
+
+    margin-top: 11px;
+  }
+
+
+  /* ONE COLUMN */
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+
+  .about-value-card {
+    min-height: auto;
+
+    padding: 25px 20px 30px;
+  }
+
+
+  /* REMOVE VERTICAL SEPARATORS */
+
+  .about-value-card::after {
+    display: none !important;
+  }
+
+
+  /* HORIZONTAL SEPARATOR */
+
+  .about-value-card:not(:last-child) {
+    border-bottom: 1px solid #e8cfad;
+  }
+
+
+  /* ICON */
+
+  .about-value-icon {
+    width: 62px;
+    height: 62px;
+
+    margin-bottom: 14px;
+  }
+
+
+  .about-value-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+
+  /* TITLE */
+
+  .about-value-card h3 {
+    font-size: 13px;
+
+    margin-bottom: 7px;
+  }
+
+
+  /* TEXT */
+
+  .about-value-card p {
+    max-width: 285px;
+
+    font-size: 10px;
+
+    line-height: 1.65;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .about-values-container {
+    padding: 40px 15px 45px;
+  }
+
+
+  .values-heading h2 {
+    font-size: 17px;
+  }
+
+
+  .heading-arrow {
+    font-size: 18px;
+  }
+
+
+  .about-value-card {
+    padding: 23px 15px 27px;
+  }
+
+
+  .about-value-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+
+  .about-value-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .values-heading h2,
+  .heading-arrow,
+  .about-values-line,
+  .about-value-card,
+  .about-value-icon {
+
+    animation: none;
+
+    opacity: 1;
+
+    transform: none;
+  }
+}
